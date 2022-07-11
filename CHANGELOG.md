@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/sbrunner/netatmo2graphite/tree/HEAD)
+
+[Full Changelog](https://github.com/sbrunner/netatmo2graphite/compare/1.0.1...HEAD)
+
+#### :wrench: Build, CI, Tests, Code style
+
+- Update the changelog [\#103](https://github.com/sbrunner/netatmo2graphite/pull/103) ([github-actions[bot]](https://github.com/apps/github-actions))
+
 ## [1.0.1](https://github.com/sbrunner/netatmo2graphite/tree/1.0.1) (2022-07-11)
 
 [Full Changelog](https://github.com/sbrunner/netatmo2graphite/compare/1.0.0...1.0.1)
