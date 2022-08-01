@@ -1,5 +1,21 @@
 # Changelog
 
+## [Unreleased](https://github.com/sbrunner/netatmo2graphite/tree/HEAD)
+
+[Full Changelog](https://github.com/sbrunner/netatmo2graphite/compare/1.0.1...HEAD)
+
+#### :wrench: Build, CI, Tests, Code style
+
+- Remove hourly limit [\#111](https://github.com/sbrunner/netatmo2graphite/pull/111) ([sbrunner](https://github.com/sbrunner))
+- Update the changelog [\#103](https://github.com/sbrunner/netatmo2graphite/pull/103) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+#### :package: Dependencies update
+
+- Lock file maintenance [\#113](https://github.com/sbrunner/netatmo2graphite/pull/113) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#112](https://github.com/sbrunner/netatmo2graphite/pull/112) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency poetry to v1.1.14 [\#110](https://github.com/sbrunner/netatmo2graphite/pull/110) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#109](https://github.com/sbrunner/netatmo2graphite/pull/109) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [1.0.1](https://github.com/sbrunner/netatmo2graphite/tree/1.0.1) (2022-07-11)
 
 [Full Changelog](https://github.com/sbrunner/netatmo2graphite/compare/1.0.0...1.0.1)
