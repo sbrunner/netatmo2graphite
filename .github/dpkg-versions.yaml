@@ -99,7 +99,7 @@ sbrunner/netatmo2graphite:latest:
   ubuntu_24_04/netbase: '6.4'
   ubuntu_24_04/openssl: 3.0.13-0ubuntu3.5
   ubuntu_24_04/passwd: 1:4.13+dfsg1-4ubuntu3.2
-  ubuntu_24_04/perl-base: 5.38.2-3.2build2.1
+  ubuntu_24_04/perl-base: 5.38.2-3.2ubuntu0.1
   ubuntu_24_04/procps: 2:4.0.4-4ubuntu3.2
   ubuntu_24_04/python3: 3.12.3-0ubuntu2
   ubuntu_24_04/python3-minimal: 3.12.3-0ubuntu2
