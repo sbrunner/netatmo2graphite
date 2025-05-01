@@ -24,4 +24,4 @@ unidecode = "1.4.0"
 prospector = { version = "1.16.1", extras = ["with_bandit", "with_mypy", "with_pyroma", "with_ruff" ] }
 prospector-profile-utils = "1.22.3"
 prospector-profile-duplicated = "1.10.5"
-setuptools="78.1.1"
+setuptools="80.1.0"
