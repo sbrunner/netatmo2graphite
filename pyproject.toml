@@ -6,13 +6,7 @@ line-length = 110
 convention = "numpy"
 
 [tool.poetry]
-name = 'netatmo2graphite'
 version = '0.0.0'
-description = 'Not used'
-authors = []
-
-[tool.poetry.scripts]
-netatmo2graphite = 'netatmo2graphite.py:main'
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
@@ -25,3 +19,20 @@ prospector = { version = "1.16.1", extras = ["with_bandit", "with_mypy", "with_p
 prospector-profile-utils = "1.22.3"
 prospector-profile-duplicated = "1.10.5"
 setuptools="80.1.0"
+
+[project]
+classifiers = [
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+]
+dynamic = ["dependencies", "version"]
+name = 'netatmo2graphite'
+description = 'Not used'
+requires-python = ">=3.10"
+
+[project.scripts]
+netatmo2graphite = 'netatmo2graphite.py:main'
