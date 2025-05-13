@@ -9,7 +9,7 @@ convention = "numpy"
 version = '0.0.0'
 
 [tool.poetry.dependencies]
-python = ">=3.10,<3.13"
+python = ">=3.10,<3.14"
 lnetatmo = "4.2.0"
 graphyte = "1.7.1"
 unidecode = "1.4.0"
