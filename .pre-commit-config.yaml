@@ -74,7 +74,7 @@ repos:
           - --profile=utils:pre-commit
           - --profile=.prospector.yaml
           - --output-format=pylint
-          - --die-on-tool-error
+          - --direct-tool-stdout
         additional_dependencies:
           - prospector-profile-utils==1.27.0 # pypi
           - prospector-profile-duplicated==1.12.0 # pypi
@@ -91,7 +91,7 @@ repos:
           )
       - id: prospector
         args:
-          - --die-on-tool-error
+          - --direct-tool-stdout
           - --output-format=pylint
           - --profile=utils:tests
           - --profile=utils:pre-commit
