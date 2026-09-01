@@ -5,3 +5,7 @@ docker:
     - name: sbrunner/netatmo2graphite
 dispatch:
   - {}
+transformers:
+  branch_to_version:
+    - to: latest
+      from_re: master
