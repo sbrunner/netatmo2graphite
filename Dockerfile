@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 AS base
+FROM ubuntu:26.04 AS base
 SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 
 # hadolint ignore=DL3008
