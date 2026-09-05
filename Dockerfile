@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 AS base
+FROM ubuntu:26.04 AS base
 SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 
 # hadolint ignore=DL3008
@@ -10,6 +10,7 @@ RUN --mount=type=cache,target=/var/lib/apt/lists \
     && python3 -m venv /venv
 
 ENV PATH=/venv/bin:$PATH
+ENV PYTHON_COLORS=0
 
 WORKDIR /app
 
