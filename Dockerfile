@@ -10,6 +10,7 @@ RUN --mount=type=cache,target=/var/lib/apt/lists \
     && python3 -m venv /venv
 
 ENV PATH=/venv/bin:$PATH
+ENV PYTHON_COLORS=0
 
 WORKDIR /app
 
