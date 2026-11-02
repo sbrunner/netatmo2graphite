@@ -3,7 +3,7 @@
 
 """Get the data on Netatmo website and set the the Graphyte."""
 
-import datetime
+import datetime as dt
 import json
 import logging
 import os
@@ -108,12 +108,12 @@ def process(state: dict[str, int], authorization: lnetatmo.ClientAuth) -> None:
                     LOG.debug(
                         "Get measure for %s, from %r",
                         key,
-                        datetime.datetime.fromtimestamp(
+                        dt.datetime.fromtimestamp(
                             state.get(
                                 key,
                                 float(os.environ.get("DAEMON_DEFAULT_TIMESTAMP", "0")),
                             ),
-                            tz=datetime.timezone.utc,
+                            tz=dt.timezone.utc,
                         ),
                     )
                     measures = weather_data.getMeasure(
@@ -141,8 +141,8 @@ def process(state: dict[str, int], authorization: lnetatmo.ClientAuth) -> None:
                         ):
                             LOG.info(
                                 "Ignore from date: %r, current: %r, diff: %f",
-                                datetime.datetime.fromtimestamp(time_int, tz=datetime.timezone.utc),
-                                datetime.datetime.fromtimestamp(state[key], tz=datetime.timezone.utc),
+                                dt.datetime.fromtimestamp(time_int, tz=dt.timezone.utc),
+                                dt.datetime.fromtimestamp(state[key], tz=dt.timezone.utc),
                                 time_int - state[key],
                             )
                             state[key] += int(os.environ.get("DAEMON_PROCESS_ADD_ON_IGNORE_SECONDS", "3600"))
@@ -160,7 +160,7 @@ def process(state: dict[str, int], authorization: lnetatmo.ClientAuth) -> None:
                     LOG.debug(
                         "Save state %s: %r",
                         key,
-                        datetime.datetime.fromtimestamp(time_int, tz=datetime.timezone.utc),
+                        dt.datetime.fromtimestamp(time_int, tz=dt.timezone.utc),
                     )
 
                     state_path = Path("/etc/netatmo2graphite/state.json")
