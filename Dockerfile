@@ -17,7 +17,7 @@ WORKDIR /app
 COPY requirements.txt /tmp/
 # hadolint ignore=DL3042
 RUN --mount=type=cache,target=/root/.cache \
-    python3 -m pip install --disable-pip-version-check --requirement=/tmp/requirements.txt
+    python3 -m pip install '--only-binary=:all:' --disable-pip-version-check --requirement=/tmp/requirements.txt
 
 # Used to convert the locked packages by poetry to pip requirements format
 FROM base AS poetry
@@ -27,7 +27,7 @@ WORKDIR /tmp
 COPY requirements.txt ./
 # hadolint ignore=DL3042
 RUN --mount=type=cache,target=/root/.cache \
-    python3 -m pip install --disable-pip-version-check --requirement=requirements.txt
+    python3 -m pip install '--only-binary=:all:' --disable-pip-version-check --requirement=requirements.txt
 
 # Do the conversion
 COPY poetry.lock pyproject.toml ./
@@ -39,14 +39,14 @@ FROM base AS checker
 # hadolint ignore=DL3042
 RUN --mount=type=cache,target=/root/.cache \
     --mount=type=bind,from=poetry,source=/tmp,target=/poetry \
-    python3 -m pip install --disable-pip-version-check --no-deps --requirement=/poetry/requirements-dev.txt
+    python3 -m pip install '--only-binary=:all:' --disable-pip-version-check --no-deps --requirement=/poetry/requirements-dev.txt
 
 FROM base AS run
 
 # hadolint ignore=DL3042
 RUN --mount=type=cache,target=/root/.cache \
     --mount=type=bind,from=poetry,source=/tmp,target=/poetry \
-    python3 -m pip install --disable-pip-version-check --no-deps --requirement=/poetry/requirements.txt \
+    python3 -m pip install '--only-binary=:all:' --disable-pip-version-check --no-deps --requirement=/poetry/requirements.txt \
     && python3 -m pip freeze > /requirements.txt
 
 RUN python3 -m compileall -q /venv/lib/python3.* && pip freeze --all > /requirements.txt
