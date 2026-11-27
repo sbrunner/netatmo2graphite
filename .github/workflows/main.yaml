@@ -101,7 +101,10 @@ jobs:
           path: /tmp/
       - run: docker load --input=/tmp/images.docker
 
-      - run: docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
+      - run: docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Publish
         run: uv run --locked --isolated --no-build --project=.github/publish tag-publish
